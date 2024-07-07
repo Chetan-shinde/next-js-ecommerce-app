@@ -1,0 +1,7 @@
+.product-thumbnail {
+  position: relative;
+}
+
+.product-thumbnail .img-fluid {
+  object-fit: contain;
+}

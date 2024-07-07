@@ -1,0 +1,33 @@
+.dashboard-user-sub-menu {
+  width: 215px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  right: 0px;
+  top: 42px;
+  text-align: left;
+  background: white;
+  z-index: 2;
+  gap: 5px;
+}
+
+.dashboard-user-sub-menu li {
+  display: flex;
+}
+
+.dashboard-user-sub-menu:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  top: -8px;
+  right: 43px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.custom-navbar-cta {
+  position: relative;
+}
