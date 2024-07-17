@@ -1,0 +1,19 @@
+services:
+  next-app:
+    networks:
+      - client-side
+    ports:
+      - 3000:3000
+  db:
+    image: postgres:alpine:3.20
+    restart: always
+    networks:
+      - server-side
+      - client-side
+    ports: -5432:5432
+    volumes: -db-data:/var/lib/postgresql/data
+
+volumes: db-data:{}
+
+networks: client-side:{}
+  server-side:{}
