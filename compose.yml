@@ -1,5 +1,7 @@
 services:
   next-app:
+    build:
+      context: next-app
     networks:
       - client-side
     ports:
