@@ -7,7 +7,10 @@ export default function PopularProduct({ products }) {
         <div className="row">
           {products.map((product) => {
             return (
-              <div className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+              <div
+                key={product.prod_id}
+                className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0"
+              >
                 <div className="product-item-sm d-flex">
                   <div className="thumbnail">
                     <Image

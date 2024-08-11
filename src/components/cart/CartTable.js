@@ -58,7 +58,12 @@ export default function CartTable() {
     return <h2>No items found</h2>;
   }
 
-  const { cart_data: cart_items, cart_item_products } = data.data;
+  const {
+    cart_data: cart_items,
+    cart_item_products,
+    cart_sub_total,
+    cart_total,
+  } = data.data;
 
   if (!cart_items || cart_items.length == 0) {
     return <h2>No items found</h2>;
@@ -87,6 +92,7 @@ export default function CartTable() {
 
     if (update_cart_response.success) {
       setcartUpdateMsg(update_cart_response.message);
+      mutate();
     }
   }
 
@@ -193,7 +199,7 @@ export default function CartTable() {
                     <span className="text-black">Subtotal</span>
                   </div>
                   <div className="col-md-6 text-right">
-                    <strong className="text-black">$230.00</strong>
+                    <strong className="text-black">${cart_sub_total}</strong>
                   </div>
                 </div>
                 <div className="row mb-5">
@@ -201,7 +207,7 @@ export default function CartTable() {
                     <span className="text-black">Total</span>
                   </div>
                   <div className="col-md-6 text-right">
-                    <strong className="text-black">$230.00</strong>
+                    <strong className="text-black">${cart_total}</strong>
                   </div>
                 </div>
 
@@ -235,7 +241,7 @@ function CartItem({ item, updateQty, product, removeCartItem }) {
 
   useEffect(() => {
     updateQty(item.cart_item_id, qty);
-  }, [qty]);
+  }, [qty, item.cart_item_id]);
 
   return (
     <tr>

@@ -42,7 +42,14 @@ export const getProductsFromCart = async (cart_data, { db }) => {
   let data = null;
 
   if (cart_data && cart_data.length > 0) {
-    const cartItemProdId = cart_data.map((item) => item.cart_item_prod_id);
+    let cartItemByProdId = {};
+
+    cart_data.forEach((item) => {
+      cartItemByProdId[item.cart_item_prod_id] = item;
+    });
+
+    let cartItemProdId = Object.keys(cartItemByProdId);
+
     const productMedia = await getProducts(
       { prod_ids: cartItemProdId },
       { db }
@@ -51,7 +58,9 @@ export const getProductsFromCart = async (cart_data, { db }) => {
     if (productMedia && productMedia.length > 0) {
       for (const prdM of productMedia) {
         cart_item_products[prdM.prod_id] = prdM;
-        cart_sub_total += parseFloat(prdM.prod_price);
+        cart_sub_total += parseFloat(
+          prdM.prod_price * cartItemByProdId[prdM.prod_id].cart_item_qty
+        );
       }
     }
 

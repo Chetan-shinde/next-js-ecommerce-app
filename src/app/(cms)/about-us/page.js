@@ -33,6 +33,7 @@ export default function AboutUs() {
                   className="img-fluid"
                   width={700}
                   height={500}
+                  alt="Couch"
                 />
               </div>
             </div>

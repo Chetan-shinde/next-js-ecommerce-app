@@ -55,12 +55,14 @@ export const getCart = async (cart_token, cust_id, count, params) => {
   }
 
   if (params) {
-    const { where } = params;
+    const { wherefn } = params;
 
-    if (where) {
-      for (const wh of where) {
+    if (wherefn) {
+      wherefn(query);
+
+      /*    for (const wh of where) {
         query.andWhere(wh);
-      }
+      } */
     }
   }
 
@@ -77,7 +79,7 @@ export const getCart = async (cart_token, cust_id, count, params) => {
     );
   }
 
-  //let s = await query.toString();
+  let s = await query.toString();
 
   const cart = await query;
 

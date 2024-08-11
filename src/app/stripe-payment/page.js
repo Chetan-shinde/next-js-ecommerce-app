@@ -1,4 +1,4 @@
-import StripePayment from "@/components/payment/StripePayment";
+import { default as StripeCom } from "@/components/payment/StripePayment";
 
 function getData() {
   const billingDetails = {
@@ -25,7 +25,7 @@ export default function StripePayment() {
       <div className="row">
         <div className="col-lg-3"></div>
         <div className="col-lg-6 paymentBox">
-          <StripePayment billingDetails={pageData.billingDetails} />
+          <StripeCom billingDetails={pageData.billingDetails} />
         </div>
         <div className="col-lg-3"></div>
       </div>

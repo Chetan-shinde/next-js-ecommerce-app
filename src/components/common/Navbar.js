@@ -7,6 +7,7 @@ import MenuItem from "./MenuItems";
 import UserIcon from "./UserIcon";
 import DashboardUserIcon from "../dashboard/DashboardUserIcon";
 import { AppState } from "@/context/Context";
+import { Suspense } from "react";
 
 const navitems = [
   { name: "Home", link: "/" },
@@ -45,7 +46,13 @@ export default function Navbar({ isCMS }) {
         <div className="collapse navbar-collapse" id="navbarsFurni">
           <MenuItem items={navitems} />
           <ul className="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-            {isCMS ? <UserIcon /> : <DashboardUserIcon />}
+            {isCMS ? (
+              <Suspense>
+                <UserIcon />
+              </Suspense>
+            ) : (
+              <DashboardUserIcon />
+            )}
             <li className="cart-icon">
               <Link href="/cart">
                 <Image src={cartImg} alt="" />

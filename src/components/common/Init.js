@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 export default function Init() {
   const { dispatch } = AppState();
+
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
@@ -33,6 +34,7 @@ export default function Init() {
     return () => {
       //controller.abort();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <></>;
 }

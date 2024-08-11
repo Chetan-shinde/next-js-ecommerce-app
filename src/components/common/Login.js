@@ -110,7 +110,9 @@ export default function Login({ onClickSignup }) {
                     <i className="far fa-user pr-2"></i>Sign In
                   </small>
                 </button>
-                <span onClick={onClickSignup}>(Don't have an account?)</span>
+                <span onClick={onClickSignup}>
+                  (Don&apos;t have an account?)
+                </span>
               </div>
             </form>
           </div>

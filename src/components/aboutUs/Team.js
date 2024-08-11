@@ -12,7 +12,12 @@ export default function Team() {
 
         <div className="row">
           <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-            <Image src="/images/person_1.jpg" className="img-fluid mb-5" fill />
+            <Image
+              src="/images/person_1.jpg"
+              className="img-fluid mb-5"
+              fill
+              alt="person1"
+            />
             <h3 clas="">
               <a href="#">
                 <span className="">Lawson</span> Arnold
@@ -31,7 +36,12 @@ export default function Team() {
           </div>
 
           <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-            <Image src="/images/person_2.jpg" className="img-fluid mb-5" fill />
+            <Image
+              src="/images/person_2.jpg"
+              className="img-fluid mb-5"
+              fill
+              alt="person2"
+            />
 
             <h3 clas="">
               <a href="#">
@@ -51,7 +61,12 @@ export default function Team() {
           </div>
 
           <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-            <Image src="/images/person_3.jpg" className="img-fluid mb-5" fill />
+            <Image
+              src="/images/person_3.jpg"
+              className="img-fluid mb-5"
+              fill
+              alt="person3"
+            />
             <h3 clas="">
               <a href="#">
                 <span className="">Patrik</span> White
@@ -70,7 +85,12 @@ export default function Team() {
           </div>
 
           <div className="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-            <Image src="/images/person_4.jpg" className="img-fluid mb-5" fill />
+            <Image
+              src="/images/person_4.jpg"
+              className="img-fluid mb-5"
+              fill
+              alt="person4"
+            />
 
             <h3 clas="">
               <a href="#">
