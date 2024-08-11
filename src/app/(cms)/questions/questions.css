@@ -1,0 +1,35 @@
+.que-wrap {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* gap: 52px; */
+  text-align: center;
+}
+
+.que {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 500px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.que_input_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.que_input_box .form-check {
+  display: flex;
+  padding: 3px;
+  gap: 5px;
+  vertical-align: middle;
+  justify-content: center;
+}
+.list-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
