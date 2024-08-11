@@ -6,6 +6,8 @@ services:
       - client-side
     ports:
       - 3000:3000
+    environment:
+      - NODE_ENV=production
   db:
     image: postgres:16.3-alpine3.20
     restart: always
