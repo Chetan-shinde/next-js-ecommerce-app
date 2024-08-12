@@ -95,7 +95,8 @@ const handler = async (request, res, db) => {
         cart_items: 0,
       }),
       {
-        "Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        //"Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        "Set-Cookie": `access_token=${accessToken};  Path=/; HttpOnly`,
       }
     );
   } else {
@@ -128,7 +129,8 @@ const handler = async (request, res, db) => {
     } catch (error) {
       console.log(error);
       headers = {
-        "Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+        //"Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+        "Set-Cookie": `access_token=; Path=/; Max-Age=-1; HttpOnly`,
       };
     }
 

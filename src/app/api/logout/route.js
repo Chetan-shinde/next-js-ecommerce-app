@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   let headers = {
-    "Set-Cookie": `access_token=hj; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+    //"Set-Cookie": `access_token=hj; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+    "Set-Cookie": `access_token=hj; Path=/; Max-Age=-1; HttpOnly`,
   };
   let response = NextResponse.next();
   // Set a cookie to hide the banner

@@ -32,7 +32,8 @@ const tokenInfo = (token) => {
 
 const removeToken = () => {
   const headers = {
-    "Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+    //"Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+    "Set-Cookie": `access_token=; Path=/; Max-Age=-1; HttpOnly`,
   };
   return headers;
 };

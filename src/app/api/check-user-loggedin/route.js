@@ -24,7 +24,8 @@ export async function POST(request) {
     status = false;
     const d = new Date(0).toUTCString();
     headers = {
-      "Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+      //"Set-Cookie": `access_token=; Domain=localhost;  Path=/; Max-Age=-1; HttpOnly`,
+      "Set-Cookie": `access_token=; Path=/; Max-Age=-1; HttpOnly`,
     };
   }
 

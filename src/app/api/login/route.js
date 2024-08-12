@@ -37,7 +37,8 @@ const handler = async function POST(request, res, db) {
       let accessToken = createAccessToken(payload);
       //set cookie
       headers = {
-        "Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        //"Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        "Set-Cookie": `access_token=${accessToken}; Path=/; HttpOnly`,
       };
 
       processLoginOnCart(token, res.data.cust_id, accessToken);

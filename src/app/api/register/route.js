@@ -26,7 +26,8 @@ export async function POST(request) {
       });
       //set cookie
       headers = {
-        "Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        //"Set-Cookie": `access_token=${accessToken}; Domain=localhost;  Path=/; HttpOnly`,
+        "Set-Cookie": `access_token=${accessToken}; Path=/; HttpOnly`,
       };
     } else {
       message = "Signup failed";
