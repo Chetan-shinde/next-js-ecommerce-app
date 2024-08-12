@@ -13,6 +13,7 @@ RUN chmod +x /docker-entrypoint.sh
 
 EXPOSE 3000
 
-ENTRYPOINT [ "/bin/sh", "/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/bin/sh", "/docker-entrypoint.sh" ] 
+#https://dev.to/mattishida/a-gotcha-with-nextjs-production-builds-in-docker-compose-2232
 
 #CMD ["npm", "run",  "start"]
