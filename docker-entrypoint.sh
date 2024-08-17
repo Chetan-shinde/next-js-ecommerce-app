@@ -4,4 +4,4 @@
 npm run build
 
 # Start the production server
-pm2 start npm --name furni_app -- start 
+pm2-runtime npm --name furni_app -- start 
