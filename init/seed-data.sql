@@ -1,0 +1,9 @@
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Reclince chair', 1800, '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('stool', 940,  '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Study table', 2000,  '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Shoe rack', 1550,  '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Wall mirror', 2000,  '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Book shelves', 1850,  '2023-11-13 17:50:23.426105', null, null, null);
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Kruzo aero chair', 1780,  '2023-11-13 17:50:23.426105', null, 'Y', 'Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio');
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('Ergonomic chair', 1430,  '2023-11-13 17:50:23.426105', null, 'Y', 'Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio');
+INSERT INTO products (prod_name, prod_price, prod_added_date, prod_modified_date, prod_feature, prod_descr) VALUES ('nordic chair', 1000,  '2023-11-13 17:50:23.426105', null, 'Y', 'Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio');
