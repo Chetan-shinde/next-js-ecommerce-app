@@ -7,7 +7,7 @@ export default function LoginWithGoogle() {
         data-client_id="190722337740-dg2uffe3gk0o2r7rqql0o0ubupmku2ge.apps.googleusercontent.com"
         data-context="signin"
         data-ux_mode="popup"
-        data-login_uri="http://localhost:3000/api/login-with-google"
+        data-login_uri="http://13.201.167.190:3000/api/login-with-google"
         data-nonce=""
         data-auto_prompt="false"
       ></div>

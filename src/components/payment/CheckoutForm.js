@@ -59,7 +59,7 @@ export default function CheckoutForm({ billingDetails }) {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000/thanks",
+        return_url: "http://13.201.167.190:3000/thanks",
         payment_method_data: {
           billing_details: billingDetails,
         },
