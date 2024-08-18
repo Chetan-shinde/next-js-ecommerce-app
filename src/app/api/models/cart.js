@@ -146,22 +146,23 @@ export const deleteCart = async (cartID, db) => {
 export const deleteCartItem = async (cart, cartItemID, db) => {
   await db("cart_items").where("cart_item_id", cartItemID).del();
   if (cart.length == 1) {
-    await deleteCart(cart[0].cart_id);
+    await deleteCart(cart[0].cart_id, db);
   }
   return true;
 };
 
-export const processLoginOnCart = async (token, custID, newToken) => {
+export const processLoginOnCart = async (token, custID, newToken, { db }) => {
   const trx = await db.transaction();
   try {
-    const tokenCart = await getCart(token, null);
+    const tokenCart = await getCart(token, null, null, { db: trx });
+
     let cart = null;
     let tokenCartID = null;
 
     let success = true;
 
     if (tokenCart.length > 0) {
-      const custCart = await getCart(token, custID);
+      const custCart = await getCart(token, custID, null, { db: trx });
 
       if (custCart.length > 0) {
         for (const tcitem of tokenCart) {
@@ -170,10 +171,14 @@ export const processLoginOnCart = async (token, custID, newToken) => {
             prodId: tcitem.cart_item_prod_id,
           });
           if (!cartItemFromCustCart) {
-            const addCartItemRes = await addCartItem(custCart[0].cart_id, {
-              prod_id: tcitem.cart_item_prod_id,
-              qty: tcitem.cart_item_qty,
-            });
+            const addCartItemRes = await addCartItem(
+              custCart[0].cart_id,
+              {
+                prod_id: tcitem.cart_item_prod_id,
+                qty: tcitem.cart_item_qty,
+              },
+              trx
+            );
           }
         }
       } else {
@@ -184,17 +189,21 @@ export const processLoginOnCart = async (token, custID, newToken) => {
               newToken,
               custID,
               { prod_id: tcitem.cart_item_prod_id, qty: tcitem.cart_item_qty },
-              { existCart: {} }
+              { existCart: {}, db: trx }
             );
             if (!cart.status) {
               success = false;
               break;
             }
           } else {
-            const addCartItemRes = await addCartItem(cart.cart.cart_id, {
-              prod_id: tcitem.cart_item_prod_id,
-              qty: tcitem.cart_item_qty,
-            });
+            const addCartItemRes = await addCartItem(
+              cart.cart.cart_id,
+              {
+                prod_id: tcitem.cart_item_prod_id,
+                qty: tcitem.cart_item_qty,
+              },
+              trx
+            );
           }
         }
       }
@@ -203,12 +212,13 @@ export const processLoginOnCart = async (token, custID, newToken) => {
         trx.rollback();
       } else {
         //Delete old token cart
-        await deleteCart(tokenCartID);
+        await deleteCart(tokenCartID, trx);
         console.log(`${tokenCartID} deleted`);
         trx.commit();
       }
     }
   } catch (error) {
+    //console.log(error);
     trx.rollback();
   }
 };
