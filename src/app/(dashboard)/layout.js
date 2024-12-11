@@ -5,6 +5,7 @@ import Navbar from "@/components/common/Navbar";
 import Init from "@/components/common/Init";
 
 export default async function DashboardLayout({ children }) {
+  console.log("dashboard layout enter");
   const response = await makeRequest(
     process.env.SITE_URL + "/api/check-user-loggedin",
     "POST",
@@ -18,7 +19,7 @@ export default async function DashboardLayout({ children }) {
   if (!response.success) {
     redirect("/?login=true");
   }
-  //console.log("dashboard layout");
+  console.log("dashboard layout");
   return (
     <>
       <Init />
